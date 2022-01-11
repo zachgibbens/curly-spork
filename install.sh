@@ -15,6 +15,8 @@ chown user:user /home/user/.ssh
 chown user:user /home/user/.ssh/authorized_keys
 chmod 600 /home/user/.ssh/authorized_keys
 chmod 700 /home/user/.ssh
+sed -i s/\#PasswordAuthentication\ yes/PasswordAuthentication\ no/g /etc/ssh/sshd_config
+sed -i s/\#PermitEmptyPasswords\ no/PermitEmptyPasswords\ no/g /etc/ssh/sshd_config
+sudo systemctl restart ssh.service
 sudo apt install -y mosh screen ssh
 sudo apt install -y openbox slim xorg firefox terminator xinit xcompmgr nitrogen tint2 conky-all
-
