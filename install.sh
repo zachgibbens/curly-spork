@@ -20,4 +20,5 @@ sed -i s/\#PasswordAuthentication\ yes/PasswordAuthentication\ no/g /etc/ssh/ssh
 sed -i s/\#PermitEmptyPasswords\ no/PermitEmptyPasswords\ no/g /etc/ssh/sshd_config
 sudo systemctl restart ssh.service
 sudo DEBIAN_FRONTEND=noninteractive apt install -y mosh screen ssh
-sudo DEBIAN_FRONTEND=noninteractive apt install -y openbox slim xorg firefox terminator xinit xcompmgr nitrogen tint2 conky-all
+sudo DEBIAN_FRONTEND=noninteractive apt install -y openbox slim xorg firefox terminator xinit xcompmgr nitrogen tint2 conky-all iptables tigervnc-standalone-server novnc
+#sudo DEBIAN_FRONTEND=noninteractive apt ./icaclient.deb
