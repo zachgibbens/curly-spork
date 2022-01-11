@@ -1,6 +1,6 @@
 #!/bin/bash
 date -u >> /root/test.txt
-apt install -y curl sudo
+sudo DEBIAN_FRONTEND=noninteractive apt install -y curl sudo
 useradd -m -s /bin/bash -p $(perl -e 'print crypt($ARGV[0], "password")' 'changeme') user
 adduser user sudo
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.orig
@@ -19,5 +19,5 @@ chmod 700 /home/user/.ssh
 sed -i s/\#PasswordAuthentication\ yes/PasswordAuthentication\ no/g /etc/ssh/sshd_config
 sed -i s/\#PermitEmptyPasswords\ no/PermitEmptyPasswords\ no/g /etc/ssh/sshd_config
 sudo systemctl restart ssh.service
-sudo apt install -y mosh screen ssh
-sudo apt install -y openbox slim xorg firefox terminator xinit xcompmgr nitrogen tint2 conky-all
+sudo DEBIAN_FRONTEND=noninteractive apt install -y mosh screen ssh
+sudo DEBIAN_FRONTEND=noninteractive apt install -y openbox slim xorg firefox terminator xinit xcompmgr nitrogen tint2 conky-all
