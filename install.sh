@@ -1,7 +1,7 @@
 #!/bin/bash
 date -u >> /root/test.txt
 apt install -y curl sudo
-useradd -m -s /bin/dash -p $(perl -e 'print crypt($ARGV[0], "password")' 'changeme') user
+useradd -m -s /bin/bash -p $(perl -e 'print crypt($ARGV[0], "password")' 'changeme') user
 adduser user sudo
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.orig
 echo "deb https://deb.debian.org/debian/ experimental main contrib non-free
