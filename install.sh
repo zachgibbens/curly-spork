@@ -16,3 +16,5 @@ chown user:user /home/user/.ssh/authorized_keys
 chmod 600 /home/user/.ssh/authorized_keys
 chmod 700 /home/user/.ssh
 sudo apt install -y mosh screen ssh
+sudo apt install -y openbox slim xorg firefox terminator xinit xcompmgr nitrogen tint2 conky-all
+
