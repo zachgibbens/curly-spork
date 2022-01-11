@@ -1,9 +1,7 @@
 #!/bin/bash
 date -u >> /root/test.txt
-<<<<<<< HEAD
-<<<<<<< HEAD
 apt install -y curl sudo
-useradd -m -p changeme user
+useradd -m -p $(perl -e 'print crypt($ARGV[0], "password")' 'changeme') user
 adduser user sudo
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.orig
 echo "deb https://deb.debian.org/debian/ experimental main contrib non-free
@@ -18,7 +16,3 @@ chown user:user /home/user/.ssh/authorized_keys
 chmod 600 /home/user/.ssh/authorized_keys
 chmod 700 /home/user/.ssh
 sudo apt install -y mosh screen ssh
-=======
->>>>>>> 8e8df36 (	new file:   install.sh)
-=======
->>>>>>> 8e8df36 (	new file:   install.sh)
